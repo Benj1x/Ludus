@@ -1,0 +1,8 @@
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\bin\Debug\netstandard2.0\Ludus.deps.json
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\bin\Debug\netstandard2.0\Ludus.dll
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\obj\Debug\netstandard2.0\Ludus.csprojAssemblyReference.cache
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\obj\Debug\netstandard2.0\Ludus.AssemblyInfoInputs.cache
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\obj\Debug\netstandard2.0\Ludus.AssemblyInfo.cs
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\bin\Debug\netstandard2.0\Ludus.pdb
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\obj\Debug\netstandard2.0\Ludus.dll
+C:\Users\Benjamin Høj\source\repos\Ludus\Ludus\obj\Debug\netstandard2.0\Ludus.pdb
