@@ -15,23 +15,23 @@ namespace Ludus.Service
             this.db = db;
         }
 
-        public void Add(Students student)
+        public void Add(Student student)
         {
             db.Students.Add(student);
             db.SaveChanges();
         }
 
-        public Students getDetails(int Id)
+        public Student getDetails(int Id)
         {
             return db.Students.FirstOrDefault(r => r.Id == Id);
         }
 
-        public List<Students> getAll()
+        public List<Student> getAll()
         {
             return db.Students.OrderBy(x => x.Name).ToList();
         }
 
-        public void update(Students student)
+        public void update(Student student)
         {
             var existing = getDetails(student.Id);
             if (existing != null)
@@ -41,8 +41,7 @@ namespace Ludus.Service
                 existing.KNumber = student.KNumber;
             }
         }
-
-        public void Remove(Students student)
+        public void Remove(Student student)
         {
             var target = db.Students.Find(student.Id);
             db.Students.Remove(target ?? throw new InvalidOperationException());

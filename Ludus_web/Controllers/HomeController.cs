@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ludus.Service;
+using Ludus_web.Models;
 
 namespace Ludus_web.Controllers
 {
@@ -29,10 +30,18 @@ namespace Ludus_web.Controllers
             return View();
         }
 
-        public ActionResult Students()
+        public ActionResult StudentList()
         {
-            ViewBag.Message = "Your students.";
-
+            var model = simDB.getAll();
+            return View(model);
+        }
+        public ActionResult Students(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                simDB.Add(student);
+                return RedirectToAction("StudentList", new {id = student.Id});
+            }
             return View();
         }
     }

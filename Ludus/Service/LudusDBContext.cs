@@ -8,7 +8,7 @@ namespace Ludus.Service
 {
     public class LudusDBContext : DbContext
     {
-        public DbSet<Students> Students { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         public LudusDBContext()
         {
