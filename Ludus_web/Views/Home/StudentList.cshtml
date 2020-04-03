@@ -2,15 +2,14 @@
 
 @{
     ViewBag.Title = "StudentList";
-}
 
 <h2>Hej drenge</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateStudent")
+    @Html.ActionLink("Add new Student", "CreateStudent")
 </p>
 <table class="table">
-    <tr>
+    <tr> 
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
