@@ -45,8 +45,9 @@ namespace Ludus_web.Controllers
             if (ModelState.IsValid)
             {
                 simDB.Add(student);
-                return RedirectToAction("StudentList", new { id = student.Id });
+                return RedirectToAction("StudentList", new {id = student.Id});
             }
+
             return View();
         }
 
@@ -58,6 +59,7 @@ namespace Ludus_web.Controllers
             {
                 return View("Not Found");
             }
+
             return View(model);
         }
 
@@ -68,10 +70,23 @@ namespace Ludus_web.Controllers
             if (ModelState.IsValid)
             {
                 simDB.update(student);
-                return RedirectToAction("Edit", new { id = student.Id });
+                return RedirectToAction("Edit", new {id = student.Id});
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateStudent(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                simDB.Add(student);
+                return RedirectToAction("StudentList", new {id = student.Id});
             }
             return View();
         }
-        
+
     }
 }

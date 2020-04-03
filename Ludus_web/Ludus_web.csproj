@@ -189,8 +189,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Students.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\CreateStudent.cshtml" />
     <Content Include="Views\Home\StudentList.cshtml" />
+    <Content Include="Views\Home\CreateStudent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
