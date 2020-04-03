@@ -37,8 +37,10 @@ namespace Ludus.Service
             if (existing != null)
             {
                 existing.Name = student.Name;
-                existing.surname = student.surname;
+                existing.Surname = student.Surname;
                 existing.KNumber = student.KNumber;
+                existing.Cpr = student.KNumber;
+                existing.Grade = student.Grade;
             }
         }
         public void Remove(Student student)

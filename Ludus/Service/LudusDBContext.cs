@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
+using Ludus.Model;
 using Ludus_web.Models;
 
 namespace Ludus.Service
@@ -9,6 +10,7 @@ namespace Ludus.Service
     public class LudusDBContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
+        public DbSet<Admin> Admins { get; set; }
 
         public LudusDBContext()
         {

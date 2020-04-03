@@ -17,12 +17,14 @@ namespace Ludus_web.Controllers
             this.simDB = simDB;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             var model = simDB.getAll();
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -30,19 +32,46 @@ namespace Ludus_web.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult StudentList()
         {
             var model = simDB.getAll();
             return View(model);
         }
+
+        [HttpGet]
         public ActionResult Students(Student student)
         {
             if (ModelState.IsValid)
             {
                 simDB.Add(student);
-                return RedirectToAction("StudentList", new {id = student.Id});
+                return RedirectToAction("StudentList", new { id = student.Id });
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = simDB.getDetails(id);
+            if (model == null)
+            {
+                return View("Not Found");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                simDB.update(student);
+                return RedirectToAction("Edit", new { id = student.Id });
+            }
+            return View();
+        }
+        
     }
 }
