@@ -157,6 +157,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MainStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -175,6 +176,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Billeder\bg.jpg" />
+    <Content Include="Views\Billeder\rybnerslogo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,6 +194,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\StudentList.cshtml" />
     <Content Include="Views\Home\CreateStudent.cshtml" />
+    <Content Include="Views\Home\StudentDetails.cshtml" />
+    <Content Include="Views\Home\EditStudent.cshtml" />
+    <Content Include="Views\Home\DeleteStudent.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_UsedAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

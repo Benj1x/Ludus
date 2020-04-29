@@ -8,6 +8,7 @@ using Ludus_web.Models;
 
 namespace Ludus_web.Controllers
 {
+    [Authorize(Users = "Admin")]
     public class HomeController : Controller
     {
         public SqlLudusData simDB;
@@ -23,7 +24,7 @@ namespace Ludus_web.Controllers
             var model = simDB.getAll();
             return View(model);
         }
-
+        
         [HttpGet]
         public ActionResult About()
         {
@@ -31,51 +32,66 @@ namespace Ludus_web.Controllers
 
             return View();
         }
-
+        
         [HttpGet]
         public ActionResult StudentList()
         {
             var model = simDB.getAll();
             return View(model);
         }
-
         [HttpGet]
-        public ActionResult Students(Student student)
+        public ActionResult DeleteStudent()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DeleteStudent(int id)
         {
             if (ModelState.IsValid)
             {
-                simDB.Add(student);
-                return RedirectToAction("StudentList", new {id = student.Id});
+                var model = simDB.getDetails(id);
+                simDB.Remove(model);
+                return RedirectToAction("Index", simDB.getAll());
             }
 
             return View();
         }
-
+        
         [HttpGet]
-        public ActionResult Edit(int id)
+        public ActionResult StudentDetails(int id)
         {
             var model = simDB.getDetails(id);
             if (model == null)
             {
-                return View("Not Found");
+                return View("Index");
             }
 
             return View(model);
         }
-
+        [HttpGet]
+        public ActionResult EditStudent()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Student student)
+        public ActionResult EditStudent(Student student)
         {
             if (ModelState.IsValid)
             {
                 simDB.update(student);
-                return RedirectToAction("Edit", new {id = student.Id});
+                return RedirectToAction("EditStudent", new {id = student.Id});
             }
 
             return View();
         }
 
+        [HttpGet]
+        public ActionResult CreateStudent()
+        {
+            return View();
+        }
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateStudent(Student student)
@@ -87,6 +103,5 @@ namespace Ludus_web.Controllers
             }
             return View();
         }
-
     }
 }
