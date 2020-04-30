@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Ludus_web.Models;
+using Microsoft.AspNetCore.Identity;
+using Ludus.Authorization;
+
 
 namespace Ludus_web.Controllers
 {
