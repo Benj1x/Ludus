@@ -11,24 +11,22 @@
     <header>
         <div class="indhold">
             <div class="logo">
-<<<<<<< HEAD
+
                 <img src="~/Views/Billeder/rybnerslogo.png" />
-=======
+
                 <img src=@Url.Content("~/Billeder/rybnerslogo.png")
->>>>>>> 2dc03028dfab3c2a4b633fce7b61d172e6b57911
+
             </div>
             <nav class="navigations-op">
-                <a>*Brugernavn*</a>
                 <a href="Login.html">Log ud</a>
             </nav>
             <nav class="navigations-menu">
-                @Html.ActionLink("Skema", "Index", "Home")
-                @Html.ActionLink("Elevliste", "StudentList", "Home")
+                @Html.ActionLink("Skema", "Skema", "Home")
+                @Html.ActionLink("Elev oversigt", "StudentList", "Home")
             </nav>
-<<<<<<< HEAD
-            @Html.Partial("_UsedAccount")
-=======
->>>>>>> 2dc03028dfab3c2a4b633fce7b61d172e6b57911
+
+            @*Html.Partial("_UsedAccount")*@
+
         </div>
       </header>
     <div class="container body-content">

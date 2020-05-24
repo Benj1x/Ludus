@@ -8,7 +8,7 @@ using Ludus_web.Models;
 
 namespace Ludus_web.Controllers
 {
-    [Authorize(Users = "Admin")]
+    
     public class HomeController : Controller
     {
         public SqlLudusData simDB;
@@ -51,7 +51,7 @@ namespace Ludus_web.Controllers
             {
                 var model = simDB.getDetails(id);
                 simDB.Remove(model);
-                return RedirectToAction("Index", simDB.getAll());
+                return RedirectToAction("StudentList", simDB.getAll());
             }
 
             return View();
@@ -63,7 +63,7 @@ namespace Ludus_web.Controllers
             var model = simDB.getDetails(id);
             if (model == null)
             {
-                return View("Index");
+                return View("StudentList");
             }
 
             return View(model);
@@ -101,6 +101,12 @@ namespace Ludus_web.Controllers
                 simDB.Add(student);
                 return RedirectToAction("StudentList", new {id = student.Id});
             }
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            
             return View();
         }
     }

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<form action="action_page.php" method="post">
+
+    <div style="color: #FF0000">
+        <label name="Incorrect">Forkert brugernavn eller adganskode!
+        </label>
+    </div>
+
+    <div class="container">
+        <label for="Uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+    </div>
+
+    <div>
+        <label for="Pword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+
+        <button type="btnLogin">Login</button>
+    </div>
+
+    <div class="container" style="background-color: #f1f1f1">
+        <span class="psw"><a href="#">Forgot password?</a></span>
+    </div>
+</form>
